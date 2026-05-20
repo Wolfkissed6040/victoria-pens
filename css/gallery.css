@@ -1,5 +1,5 @@
 /* ========================================
-   STANDALONE LIBRARY CSS
+   LUXURY CINEMATIC GALLERY CSS
 ======================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
@@ -26,6 +26,10 @@
   margin:0;
   padding:0;
   box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
 }
 
 body{
@@ -106,6 +110,8 @@ a{
   color:var(--gold);
 
   font-family:'Cormorant Garamond',serif;
+
+  letter-spacing:.5px;
 }
 
 nav{
@@ -154,22 +160,26 @@ nav a:hover::after{
    HERO
 ======================================== */
 
-.library-hero{
+.gallery-hero{
   position:relative;
 
-  height:72vh;
+  height:78vh;
 
   overflow:hidden;
-
-  display:flex;
-  align-items:center;
-
-  padding:0 8%;
 }
 
-.library-hero::before{
-  content:"";
+.gallery-hero img{
+  width:100%;
+  height:100%;
 
+  object-fit:cover;
+
+  transform:scale(1.08);
+
+  filter:brightness(.72);
+}
+
+.gallery-overlay{
   position:absolute;
 
   inset:0;
@@ -177,22 +187,25 @@ nav a:hover::after{
   background:
   linear-gradient(
     to bottom,
-    rgba(0,0,0,.45),
+    rgba(0,0,0,.35),
     rgba(0,0,0,.88)
   );
-
-  z-index:1;
 }
 
-.library-hero-content{
-  position:relative;
+.gallery-hero-content{
+  position:absolute;
 
-  z-index:2;
+  top:50%;
+  left:8%;
 
-  max-width:760px;
+  transform:translateY(-50%);
+
+  max-width:860px;
+
+  z-index:5;
 }
 
-.library-hero-content span{
+.gallery-hero-content span{
   color:var(--gold);
 
   text-transform:uppercase;
@@ -202,71 +215,112 @@ nav a:hover::after{
   font-size:12px;
 }
 
-.library-hero-content h1{
-  font-size:110px;
+.gallery-hero-content h1{
+  font-size:120px;
 
-  line-height:.9;
+  line-height:.88;
 
-  margin:26px 0;
+  margin:28px 0;
 
   font-family:'Cormorant Garamond',serif;
+
+  text-shadow:
+  0 10px 40px rgba(0,0,0,.45);
 }
 
-.library-hero-content p{
+.gallery-hero-content p{
   color:var(--muted);
 
-  font-size:18px;
+  font-size:19px;
 
   line-height:2;
 
-  max-width:650px;
+  max-width:700px;
 }
 
 /* ========================================
    SECTION
 ======================================== */
 
-.library-section{
+.gallery-section{
   padding:140px 7%;
 }
 
 /* ========================================
-   GRID
+   TITLE
 ======================================== */
 
-.library-grid{
-  display:grid;
+.gallery-heading{
+  margin-bottom:90px;
 
-  grid-template-columns:
-  repeat(auto-fit,minmax(340px,1fr));
+  text-align:center;
+}
 
-  gap:34px;
+.gallery-heading span{
+  color:var(--gold);
+
+  text-transform:uppercase;
+
+  letter-spacing:5px;
+
+  font-size:12px;
+}
+
+.gallery-heading h2{
+  margin-top:16px;
+
+  font-size:82px;
+
+  line-height:.92;
+
+  font-family:'Cormorant Garamond',serif;
+}
+
+.gallery-heading p{
+  color:var(--muted);
+
+  max-width:700px;
+
+  margin:26px auto 0;
+
+  line-height:1.9;
 }
 
 /* ========================================
-   CARD
+   MASONRY GRID
 ======================================== */
 
-.library-card{
+.masonry-grid{
+  columns:3;
+
+  column-gap:28px;
+}
+
+/* ========================================
+   GALLERY CARD
+======================================== */
+
+.masonry-item{
   position:relative;
+
+  break-inside:avoid;
+
+  margin-bottom:28px;
 
   overflow:hidden;
 
-  border-radius:28px;
+  border-radius:26px;
 
   border:1px solid rgba(255,255,255,.08);
 
-  background:
-  linear-gradient(
-    145deg,
-    rgba(255,255,255,.03),
-    rgba(255,255,255,.01)
-  );
+  background:#111;
 
-  transition:.5s ease;
+  cursor:pointer;
+
+  transition:.55s ease;
 }
 
-.library-card::before{
+.masonry-item::before{
   content:"";
 
   position:absolute;
@@ -276,129 +330,175 @@ nav a:hover::after{
   background:
   radial-gradient(
     circle at top left,
-    rgba(200,164,106,.18),
+    rgba(200,164,106,.22),
     transparent 45%
   );
 
   opacity:0;
 
-  transition:.5s;
+  transition:.55s;
 
-  z-index:1;
+  z-index:2;
 }
 
-.library-card:hover::before{
+.masonry-item:hover::before{
   opacity:1;
 }
 
-.library-card:hover{
+.masonry-item:hover{
   transform:
   translateY(-12px)
   scale(1.01);
 
   border-color:
-  rgba(200,164,106,.45);
+  rgba(200,164,106,.55);
 
   box-shadow:
-  0 30px 80px rgba(0,0,0,.4);
+  0 25px 70px rgba(0,0,0,.45),
+  0 0 40px rgba(200,164,106,.08);
 }
 
-/* ========================================
-   IMAGE
-======================================== */
-
-.library-image{
-  overflow:hidden;
-
-  height:320px;
-}
-
-.library-image img{
+.masonry-item img{
   width:100%;
-  height:100%;
-
-  object-fit:cover;
 
   transition:1s ease;
+
+  filter:brightness(.94);
 }
 
-.library-card:hover .library-image img{
+.masonry-item:hover img{
   transform:scale(1.08);
+
+  filter:brightness(1);
 }
 
 /* ========================================
-   CONTENT
+   OVERLAY
 ======================================== */
 
-.library-content{
-  position:relative;
+.masonry-item::after{
+  content:"View Piece";
 
-  z-index:2;
+  position:absolute;
 
-  padding:32px;
-}
+  inset:0;
 
-.library-content span{
-  color:var(--gold);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  color:#fff;
+
+  font-size:13px;
 
   text-transform:uppercase;
 
-  letter-spacing:3px;
+  letter-spacing:4px;
 
-  font-size:11px;
+  background:
+  linear-gradient(
+    to top,
+    rgba(0,0,0,.65),
+    rgba(0,0,0,.15)
+  );
+
+  opacity:0;
+
+  transition:.45s;
+
+  z-index:3;
 }
 
-.library-content h3{
-  margin:16px 0;
-
-  font-size:42px;
-
-  line-height:1;
-
-  font-family:'Cormorant Garamond',serif;
-}
-
-.library-content p{
-  color:var(--muted);
-
-  line-height:1.9;
-
-  margin-bottom:28px;
+.masonry-item:hover::after{
+  opacity:1;
 }
 
 /* ========================================
-   TAGS
+   LIGHTBOX
 ======================================== */
 
-.library-tags{
+.lightbox{
+  position:fixed;
+
+  inset:0;
+
+  background:rgba(0,0,0,.94);
+
   display:flex;
+  align-items:center;
+  justify-content:center;
 
-  flex-wrap:wrap;
+  opacity:0;
 
-  gap:10px;
+  pointer-events:none;
+
+  transition:.45s ease;
+
+  z-index:9999;
+
+  backdrop-filter:blur(12px);
 }
 
-.library-tags div{
-  padding:10px 16px;
+.lightbox.active{
+  opacity:1;
 
-  border-radius:999px;
+  pointer-events:auto;
+}
+
+.lightbox img{
+  width:auto;
+
+  max-width:88%;
+
+  max-height:88%;
+
+  border-radius:20px;
 
   border:1px solid rgba(255,255,255,.08);
 
-  background:rgba(255,255,255,.03);
+  box-shadow:
+  0 40px 120px rgba(0,0,0,.65);
+}
 
-  color:var(--gold);
+/* ========================================
+   FOOTER
+======================================== */
 
-  text-transform:uppercase;
+footer{
+  padding:50px 8%;
 
-  letter-spacing:1px;
+  border-top:1px solid rgba(255,255,255,.06);
 
-  font-size:10px;
+  text-align:center;
+
+  color:var(--muted);
+
+  font-size:14px;
 }
 
 /* ========================================
    RESPONSIVE
 ======================================== */
+
+@media(max-width:1200px){
+
+  .gallery-hero-content h1{
+    font-size:92px;
+  }
+
+  .gallery-heading h2{
+    font-size:62px;
+  }
+
+}
+
+@media(max-width:1000px){
+
+  .masonry-grid{
+    columns:2;
+  }
+
+}
 
 @media(max-width:768px){
 
@@ -406,16 +506,20 @@ nav a:hover::after{
     display:none;
   }
 
-  .library-hero{
-    height:60vh;
+  .gallery-hero{
+    height:62vh;
   }
 
-  .library-hero-content h1{
-    font-size:58px;
+  .gallery-hero-content h1{
+    font-size:56px;
   }
 
-  .library-grid{
-    grid-template-columns:1fr;
+  .gallery-heading h2{
+    font-size:42px;
+  }
+
+  .masonry-grid{
+    columns:1;
   }
 
 }

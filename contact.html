@@ -1,176 +1,255 @@
-<!-- contact.html -->
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
   <title>Contact | Victoria Pens</title>
 
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet"
+        href="css/contact.css">
 
 </head>
 
 <body>
 
-<header class="navbar">
+  <!-- GRAIN -->
 
-  <div class="logo">
-    Victoria Pens
-  </div>
+  <div class="grain"></div>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="configurator.html">Services Provided</a>
-    <a href="library.html">Reference Library</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+  <!-- NAVBAR -->
 
-</header>
+  <header class="navbar">
 
-<section class="section" style="padding-top:180px;">
+    <a href="index.html"
+       class="logo">
+      Victoria Pens
+    </a>
 
-  <div class="section-heading">
+    <nav>
 
-    <span>Contact Atelier</span>
+      <a href="index.html">
+        Home
+      </a>
 
-    <h2>
-      Commission Requests
-    </h2>
+      <a href="configurator.html">
+        Services Provided
+      </a>
 
-  </div>
+      <a href="library.html">
+        Reference Library
+      </a>
 
-  <div class="contact-layout">
+      <a href="gallery.html">
+        Gallery
+      </a>
 
-    <!-- FORM -->
+      <a href="about.html">
+        About
+      </a>
 
-    <form class="luxury-form" id="contactForm">
 
-      <input
-        type="text"
-        name="user_name"
-        placeholder="Full Name"
-        required
-      >
+      <a href="contact.html">
+        Contact
+      </a>
 
-      <input
-        type="email"
-        name="user_email"
-        placeholder="Email Address"
-        required
-      >
+    </nav>
+  </header>
 
-      <input
-        type="text"
-        name="pen_model"
-        placeholder="Pen Model"
-        required
-      >
+  <!-- HERO -->
 
-      <textarea
-        name="message"
-        rows="7"
-        placeholder="Describe your desired writing experience..."
-        required
-      ></textarea>
+  <section class="contact-hero">
 
-      <button type="submit" class="btn-primary">
-        Submit Request
-      </button>
+    <img src="assets/images/contact-hero.jpg"
+         alt="Contact Hero">
 
-    </form>
+    <div class="contact-overlay"></div>
 
-    <!-- CONTACT INFO -->
+    <div class="contact-hero-content">
 
-    <div class="contact-info">
+      <span>
+        Reach Out
+      </span>
 
-      <div class="info-block">
+      <h1>
+        Begin Your
+        Writing Journey
+      </h1>
 
-        <span>Response Window</span>
+      <p>
+        Whether you seek precision tuning,
+        vintage restoration, custom grinds,
+        or guidance for your collection,
+        we would be delighted to hear from you.
+      </p>
 
-        <h3>
-          24–72 Hours
-        </h3>
+    </div>
+
+  </section>
+
+  <!-- CONTACT SECTION -->
+
+  <section class="contact-section">
+
+    <div class="contact-grid">
+
+      <!-- FORM -->
+
+      <div class="contact-form-card">
+
+        <span>
+          Inquiry Form
+        </span>
+
+        <h2>
+          Send A Message
+        </h2>
+
+        <form class="contact-form"
+              id="contactForm">
+
+          <input type="text"
+                 name="name"
+                 placeholder="Your Name"
+                 required>
+
+          <input type="email"
+                 name="email"
+                 placeholder="Your Email"
+                 required>
+
+          <input type="text"
+                 name="subject"
+                 placeholder="Subject">
+
+          <textarea name="message"
+                    placeholder="Tell us about your pen, nib, or request..."
+                    required></textarea>
+
+          <button type="submit"
+                  class="contact-btn">
+
+            Send Inquiry
+
+          </button>
+
+        </form>
 
       </div>
 
-      <div class="info-block">
+      <!-- INFO -->
 
-        <span>Commission Status</span>
+      <div class="contact-info">
 
-        <h3>
-          Currently Open
-        </h3>
+        <div class="info-card">
 
-      </div>
+          <span>
+            Email
+          </span>
 
-      <div class="info-block">
+          <h3>
+            Direct Contact
+          </h3>
 
-        <span>Social</span>
+          <p>
+            victoriapensatelier@gmail.com
+          </p>
 
-        <h3>
-          @victoria_pens
-        </h3>
+        </div>
+
+        <div class="info-card">
+
+          <span>
+            Instagram
+          </span>
+
+          <h3>
+            Visual Archive
+          </h3>
+
+          <p>
+            @victoriapens
+          </p>
+
+        </div>
+
+        <div class="info-card">
+
+          <span>
+            Response Time
+          </span>
+
+          <h3>
+            Atelier Support
+          </h3>
+
+          <p>
+            Most inquiries are answered
+            within 24 to 48 hours.
+          </p>
+
+        </div>
 
       </div>
 
     </div>
 
-  </div>
+  </section>
 
-</section>
+  <!-- FOOTER -->
 
-<!-- EMAILJS -->
+  <footer>
 
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    © 2026 Victoria Pens.
+    Crafted with precision and artistry.
 
-<script>
+  </footer>
 
-  // =========================
-  // INITIALIZE EMAILJS
-  // =========================
+  <!-- EMAILJS -->
 
-  emailjs.init("rrI0hC4k0kh9IF3gM");
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
-  // =========================
-  // FORM SUBMISSION
-  // =========================
+  <script>
 
-  const form = document.getElementById("contactForm");
+    emailjs.init("YOUR_PUBLIC_KEY");
 
-  form.addEventListener("submit", function(e){
+    const contactForm =
+      document.getElementById("contactForm");
 
-    e.preventDefault();
+    contactForm.addEventListener("submit", function(e){
 
-    emailjs.sendForm(
-      "service_7cnfptv",
-      "template_fbq1pde",
-      this
-    )
+      e.preventDefault();
 
-    .then(() => {
+      emailjs.sendForm(
+        "YOUR_SERVICE_ID",
+        "YOUR_TEMPLATE_ID",
+        this
+      )
 
-      alert("Commission request sent successfully.");
+      .then(() => {
 
-      form.reset();
+        alert("Message sent successfully.");
 
-    })
+        contactForm.reset();
 
-    .catch((error) => {
+      })
 
-      console.error(error);
+      .catch((error) => {
 
-      alert("Failed to send request.");
+        console.error(error);
+
+        alert("Failed to send message.");
+
+      });
 
     });
 
-  });
-
-</script>
+  </script>
 
 </body>
+
 </html>

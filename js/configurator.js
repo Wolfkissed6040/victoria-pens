@@ -224,8 +224,6 @@ livePrice.innerHTML =
 
   livePrice.innerText = total;
 
-  livePrice.classList.remove("text-mode");
-
 }
 
 /* =========================

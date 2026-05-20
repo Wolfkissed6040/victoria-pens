@@ -1,70 +1,211 @@
-<!-- gallery.html -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Gallery</title>
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
-  <link rel="stylesheet" href="css/style.css">
+  <title>Gallery | Victoria Pens</title>
+
+  <link rel="stylesheet"
+        href="css/gallery.css">
+
 </head>
+
 <body>
 
-<header class="navbar">
-  <div class="logo">Victoria Pens</div>
+  <!-- GRAIN -->
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="configurator.html">Services Provided</a>
-    <a href="library.html">Reference Library</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-</header>
+  <div class="grain"></div>
 
-<section class="section" style="padding-top:180px;">
+  <!-- NAVBAR -->
 
-  <div class="section-heading">
-    <span>Visual Archive</span>
-    <h2>Studio Gallery</h2>
+  <header class="navbar">
+
+    <a href="index.html"
+       class="logo">
+      Victoria Pens
+    </a>
+
+    <nav>
+
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="configurator.html">
+        Services Provided
+      </a>
+
+      <a href="library.html">
+        Reference Library
+      </a>
+
+      <a href="gallery.html">
+        Gallery
+      </a>
+
+      <a href="about.html">
+        About
+      </a>
+
+
+      <a href="contact.html">
+        Contact
+      </a>
+
+    </nav>
+
+  </header>
+
+  <!-- HERO -->
+
+  <section class="gallery-hero">
+
+    <img src="assets\images\sample-placeholder4.jpeg"
+         alt="Gallery Hero">
+
+    <div class="gallery-overlay"></div>
+
+    <div class="gallery-hero-content">
+
+      <span>
+        Visual Archive
+      </span>
+
+      <h1>
+        Studio Gallery
+      </h1>
+
+      <p>
+        A curated archive of restored nibs, bespoke grinds,
+        vintage masterpieces, and writing instruments refined
+        through careful craftsmanship.
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- GALLERY -->
+
+  <section class="gallery-section">
+
+    <div class="gallery-heading">
+
+      <span>
+        Collection
+      </span>
+
+      <h2>
+        Curated Works
+      </h2>
+
+      <p>
+        Every piece reflects precision tuning,
+        restoration artistry, and expressive writing character.
+      </p>
+
+    </div>
+
+    <div class="masonry-grid">
+
+      <!-- IMAGE -->
+
+      <div class="masonry-item">
+        <img src="assets/images/gallery1.jpg">
+      </div>
+
+      <div class="masonry-item">
+        <img src="assets\images\nib-placeholder2.jpeg">
+      </div>
+
+      <div class="masonry-item">
+        <img src="assets\images\hero-placeholder2.jpeg">
+      </div>
+
+      <div class="masonry-item">
+        <img src="assets\images\nib-placeholder1.jpeg">
+      </div>
+
+      <div class="masonry-item">
+        <img src="assets/images/gallery5.jpg">
+      </div>
+
+      <div class="masonry-item">
+        <img src="assets\images\sample-placeholder1.jpeg">
+      </div>
+
+      <div class="masonry-item">
+        <img src="assets\images\sample-placeholder2.jpeg">
+      </div>
+
+      <div class="masonry-item">
+        <img src="assets\images\sample-placeholder3.jpeg">
+      </div>
+
+      <div class="masonry-item">
+        <img src="assets\images\sample-placeholder4.jpeg">
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- LIGHTBOX -->
+
+  <div class="lightbox">
+
+    <img src=""
+         alt="Expanded Image">
+
   </div>
 
-  <div class="masonry">
+  <!-- FOOTER -->
 
-    <div class="masonry-item">
-      <img src="assets/images/sample-placeholder.jpeg" alt="">
-    </div>
+  <footer>
 
-    <div class="masonry-item">
-      <img src="assets/images/nib-placeholder.jpeg" alt="">
-    </div>
+    © 2026 Victoria Pens.
+    Crafted with precision and artistry.
 
-    <div class="masonry-item">
-      <img src="assets/images/sample-placeholder1.jpeg" alt="">
-    </div>
+  </footer>
 
-    <div class="masonry-item">
-      <img src="assets/images/nib-placeholder1.jpeg" alt="">
-    </div>
+  <!-- JS -->
 
-    <div class="masonry-item">
-      <img src="assets/images/sample-placeholder4.jpeg" alt="">
-    </div>
+  <script>
 
-    <div class="masonry-item">
-      <img src="assets/images/nib-placeholder2.jpeg" alt="">
-    </div>
+    const lightbox =
+      document.querySelector('.lightbox');
 
-  </div>
+    const lightboxImage =
+      document.querySelector('.lightbox img');
 
-</section>
+    const galleryImages =
+      document.querySelectorAll('.masonry-item img');
 
-<div class="lightbox">
-  <img src="" alt="">
-</div>
+    galleryImages.forEach(image => {
 
-<script src="js/gallery.js"></script>
+      image.addEventListener('click', () => {
+
+        lightbox.classList.add('active');
+
+        lightboxImage.src = image.src;
+
+      });
+
+    });
+
+    lightbox.addEventListener('click', () => {
+
+      lightbox.classList.remove('active');
+
+    });
+
+  </script>
+
 </body>
+
 </html>
