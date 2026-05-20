@@ -1,0 +1,176 @@
+<!-- contact.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Contact | Victoria Pens</title>
+
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<header class="navbar">
+
+  <div class="logo">
+    Victoria Pens
+  </div>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="configurator.html">Services Provided</a>
+    <a href="library.html">Reference Library</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+</header>
+
+<section class="section" style="padding-top:180px;">
+
+  <div class="section-heading">
+
+    <span>Contact Atelier</span>
+
+    <h2>
+      Commission Requests
+    </h2>
+
+  </div>
+
+  <div class="contact-layout">
+
+    <!-- FORM -->
+
+    <form class="luxury-form" id="contactForm">
+
+      <input
+        type="text"
+        name="user_name"
+        placeholder="Full Name"
+        required
+      >
+
+      <input
+        type="email"
+        name="user_email"
+        placeholder="Email Address"
+        required
+      >
+
+      <input
+        type="text"
+        name="pen_model"
+        placeholder="Pen Model"
+        required
+      >
+
+      <textarea
+        name="message"
+        rows="7"
+        placeholder="Describe your desired writing experience..."
+        required
+      ></textarea>
+
+      <button type="submit" class="btn-primary">
+        Submit Request
+      </button>
+
+    </form>
+
+    <!-- CONTACT INFO -->
+
+    <div class="contact-info">
+
+      <div class="info-block">
+
+        <span>Response Window</span>
+
+        <h3>
+          24–72 Hours
+        </h3>
+
+      </div>
+
+      <div class="info-block">
+
+        <span>Commission Status</span>
+
+        <h3>
+          Currently Open
+        </h3>
+
+      </div>
+
+      <div class="info-block">
+
+        <span>Social</span>
+
+        <h3>
+          @victoria_pens
+        </h3>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- EMAILJS -->
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script>
+
+  // =========================
+  // INITIALIZE EMAILJS
+  // =========================
+
+  emailjs.init("rrI0hC4k0kh9IF3gM");
+
+  // =========================
+  // FORM SUBMISSION
+  // =========================
+
+  const form = document.getElementById("contactForm");
+
+  form.addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    emailjs.sendForm(
+      "service_7cnfptv",
+      "template_fbq1pde",
+      this
+    )
+
+    .then(() => {
+
+      alert("Commission request sent successfully.");
+
+      form.reset();
+
+    })
+
+    .catch((error) => {
+
+      console.error(error);
+
+      alert("Failed to send request.");
+
+    });
+
+  });
+
+</script>
+
+</body>
+</html>

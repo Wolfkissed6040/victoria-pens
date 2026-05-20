@@ -1,0 +1,806 @@
+/* css/style.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap');
+
+:root{
+  --bg:#0d0d0d;
+  --bg2:#161616;
+  --gold:#c8a46a;
+  --text:#ece8e1;
+  --muted:#b7b1a8;
+  --border:rgba(255,255,255,0.08);
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:'Inter',sans-serif;
+  overflow-x:hidden;
+}
+
+img{
+  width:100%;
+  display:block;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+/* =========================
+   GRAIN
+========================= */
+
+.grain{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  opacity:0.06;
+  background-image:url("https://www.transparenttextures.com/patterns/paper-fibers.png");
+  z-index:999;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar{
+  position:fixed;
+  width:100%;
+  top:0;
+  left:0;
+  z-index:100;
+  padding:24px 6%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  backdrop-filter:blur(12px);
+  background:rgba(0,0,0,0.35);
+  border-bottom:1px solid var(--border);
+}
+
+.logo{
+  font-family:'Cormorant Garamond',serif;
+  font-size:32px;
+  color:var(--gold);
+}
+
+nav{
+  display:flex;
+  gap:32px;
+}
+
+nav a{
+  font-size:14px;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  transition:.3s;
+}
+
+nav a:hover{
+  color:var(--gold);
+}
+
+/* =========================
+   HERO
+========================= */
+
+.configurator-hero{
+  height:85vh;
+  position:relative;
+  overflow:hidden;
+}
+
+.configurator-hero img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transform:scale(1.05);
+}
+
+.overlay{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    to bottom,
+    rgba(0,0,0,.65),
+    rgba(0,0,0,.82)
+  );
+}
+
+.configurator-hero-content{
+  position:absolute;
+  top:50%;
+  left:8%;
+  transform:translateY(-50%);
+  z-index:5;
+  max-width:760px;
+}
+
+.configurator-hero-content span{
+  color:var(--gold);
+  text-transform:uppercase;
+  letter-spacing:3px;
+  font-size:12px;
+}
+
+.configurator-hero-content h1{
+  font-size:96px;
+  line-height:0.92;
+  margin:24px 0;
+  font-family:'Cormorant Garamond',serif;
+}
+
+.configurator-hero-content p{
+  color:var(--muted);
+  font-size:18px;
+  line-height:1.9;
+  max-width:620px;
+  margin-bottom:40px;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.btn-primary{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+
+  padding:16px 32px;
+
+  border-radius:999px;
+
+  background:var(--gold);
+
+  color:#111;
+
+  transition:.4s;
+
+  font-weight:500;
+}
+
+.btn-primary:hover{
+  transform:translateY(-4px);
+
+  box-shadow:
+  0 15px 35px rgba(200,164,106,.3);
+}
+
+/* =========================
+   SECTIONS
+========================= */
+
+.section{
+  padding:120px 8%;
+}
+
+.section-heading{
+  margin-bottom:60px;
+}
+
+.section-heading span{
+  color:var(--gold);
+  text-transform:uppercase;
+  letter-spacing:2px;
+  font-size:12px;
+}
+
+.section-heading h2{
+  font-size:56px;
+  margin-top:10px;
+  font-family:'Cormorant Garamond',serif;
+}
+
+/* =========================
+   CONFIGURATOR LAYOUT
+========================= */
+
+.configurator-container{
+  display:grid;
+  grid-template-columns:1.5fr .75fr;
+  gap:50px;
+  align-items:start;
+}
+
+.configurator-left{
+  display:flex;
+  flex-direction:column;
+  gap:120px;
+}
+
+/* =========================
+   CONFIG BLOCK
+========================= */
+
+.config-block{
+  position:relative;
+}
+
+.config-block::before{
+  content:"";
+  position:absolute;
+  left:-30px;
+  top:0;
+
+  width:1px;
+  height:100%;
+
+  background:linear-gradient(
+    to bottom,
+    rgba(200,164,106,.5),
+    transparent
+  );
+}
+
+.config-title span{
+  color:var(--gold);
+  text-transform:uppercase;
+  letter-spacing:3px;
+  font-size:12px;
+}
+
+.config-title h3{
+  font-size:64px;
+  margin-top:14px;
+  margin-bottom:40px;
+  font-family:'Cormorant Garamond',serif;
+}
+
+/* =========================
+   INPUTS
+========================= */
+
+.luxury-inputs{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+}
+
+.luxury-inputs input{
+  background:rgba(255,255,255,.03);
+
+  border:1px solid rgba(255,255,255,.08);
+
+  padding:22px;
+
+  color:var(--text);
+
+  font-size:16px;
+
+  transition:.4s;
+}
+
+.luxury-inputs input:focus{
+  outline:none;
+
+  border-color:rgba(200,164,106,.7);
+
+  box-shadow:0 0 30px rgba(200,164,106,.08);
+}
+
+/* =========================
+   MATERIAL GRID
+========================= */
+
+.material-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:24px;
+}
+
+.material-card{
+  position:relative;
+
+  overflow:hidden;
+
+  background:
+  linear-gradient(
+    145deg,
+    rgba(255,255,255,.04),
+    rgba(255,255,255,.015)
+  );
+
+  border:1px solid rgba(255,255,255,.08);
+
+  padding:40px;
+
+  cursor:pointer;
+
+  transition:.5s;
+}
+
+.material-card::before{
+  content:"";
+
+  position:absolute;
+
+  inset:0;
+
+  background:
+  radial-gradient(
+    circle at top left,
+    rgba(200,164,106,.12),
+    transparent 60%
+  );
+
+  opacity:0;
+
+  transition:.5s;
+}
+
+.material-card:hover::before{
+  opacity:1;
+}
+
+.material-card:hover{
+  transform:translateY(-8px);
+
+  border-color:rgba(200,164,106,.5);
+}
+
+.material-card.selected{
+  border-color:var(--gold);
+
+  box-shadow:
+  0 0 40px rgba(200,164,106,.12);
+}
+
+.material-card h4{
+  font-size:34px;
+  margin-bottom:16px;
+  font-family:'Cormorant Garamond',serif;
+}
+
+.material-card p{
+  color:var(--muted);
+  line-height:1.8;
+}
+
+/* =========================
+   SERVICE TIERS
+========================= */
+
+.service-tier{
+  margin-bottom:60px;
+}
+
+.service-tier-header{
+  margin-bottom:34px;
+
+  position:relative;
+
+  padding-left:28px;
+}
+
+/* GOLD LINE */
+
+.service-tier-header::before{
+  content:"";
+
+  position:absolute;
+
+  left:0;
+  top:8px;
+
+  width:4px;
+  height:90%;
+
+  border-radius:999px;
+
+  background:
+  linear-gradient(
+    to bottom,
+    var(--gold),
+    rgba(200,164,106,.2)
+  );
+}
+
+/* TIER LABEL */
+
+.service-tier-header span{
+  color:var(--gold);
+
+  text-transform:uppercase;
+
+  letter-spacing:4px;
+
+  font-size:16px;
+
+  font-weight:600;
+}
+
+/* MAIN TITLE */
+
+.service-tier-header h4{
+  margin-top:14px;
+
+  font-size:52px;
+
+  line-height:1;
+
+  font-family:'Cormorant Garamond',serif;
+
+  color:#f4ead7;
+
+  text-shadow:
+    0 0 25px rgba(200,164,106,.08);
+}
+
+/* =========================
+   SERVICE GRID
+========================= */
+
+.service-grid-modern{
+  display:grid;
+
+  grid-template-columns:1fr;
+
+  gap:24px;
+}
+
+.tier-two-grid{
+  grid-template-columns:repeat(2,1fr);
+}
+
+/* =========================
+   SERVICE CARDS
+========================= */
+
+.service-mini-card{
+  position:relative;
+
+  padding:34px;
+
+  background:
+  linear-gradient(
+    145deg,
+    rgba(255,255,255,.03),
+    rgba(255,255,255,.015)
+  );
+
+  border:1px solid rgba(255,255,255,.08);
+
+  cursor:pointer;
+
+  transition:.45s;
+
+  overflow:hidden;
+}
+
+.service-mini-card::before{
+  content:"";
+
+  position:absolute;
+  inset:0;
+
+  background:
+  radial-gradient(
+    circle at top left,
+    rgba(200,164,106,.12),
+    transparent 60%
+  );
+
+  opacity:0;
+
+  transition:.45s;
+}
+
+.service-mini-card:hover::before{
+  opacity:1;
+}
+
+.service-mini-card:hover{
+  transform:translateY(-6px);
+
+  border-color:rgba(200,164,106,.5);
+}
+
+.service-mini-card.selected{
+  border-color:var(--gold);
+
+  box-shadow:
+  0 0 40px rgba(200,164,106,.12);
+}
+
+.service-mini-card h4{
+  font-size:34px;
+
+  margin-bottom:16px;
+
+  font-family:'Cormorant Garamond',serif;
+}
+
+.service-mini-card p{
+  color:var(--muted);
+
+  line-height:1.8;
+
+  margin-bottom:26px;
+}
+
+.service-mini-card span{
+  color:var(--gold);
+
+  font-size:14px;
+
+  letter-spacing:1px;
+
+  text-transform:uppercase;
+}
+
+.contact-only span{
+  color:#d8b57d;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.configurator-sidebar{
+  position:sticky;
+  top:120px;
+}
+
+.summary-card{
+  background:
+  linear-gradient(
+    180deg,
+    rgba(20,20,20,.96),
+    rgba(10,10,10,.96)
+  );
+
+  border:1px solid rgba(255,255,255,.08);
+
+  padding:40px;
+
+  backdrop-filter:blur(20px);
+}
+
+.summary-card span{
+  color:var(--gold);
+
+  text-transform:uppercase;
+
+  letter-spacing:3px;
+
+  font-size:12px;
+}
+
+.summary-card h2{
+  font-size:54px;
+
+  line-height:1;
+
+  margin:24px 0;
+
+  font-family:'Cormorant Garamond',serif;
+}
+
+/* =========================
+   PRICE
+========================= */
+
+.summary-price{
+  display:flex;
+  align-items:flex-end;
+
+  gap:22px;
+
+  margin:60px 0;
+
+  color:var(--gold);
+
+  font-family:'Cormorant Garamond',serif;
+}
+
+.summary-price::before{
+  content:"₹";
+
+  font-size:120px;
+
+  line-height:1;
+
+  color:var(--gold);
+
+  flex-shrink:0;
+}
+
+.summary-price #livePrice{
+  display:block !important;
+
+  font-size:120px !important;
+
+  line-height:0.82 !important;
+
+  letter-spacing:-6px !important;
+
+  font-weight:700 !important;
+
+  color:#f3e7d1 !important;
+
+  text-shadow:
+    0 0 40px rgba(200,164,106,.18),
+    0 0 80px rgba(200,164,106,.08);
+
+  font-family:'Cormorant Garamond',serif !important;
+}
+
+/* =========================
+   SUMMARY DETAILS
+========================= */
+
+.summary-details{
+  display:flex;
+  flex-direction:column;
+  gap:30px;
+}
+
+.summary-item{
+  padding-bottom:24px;
+
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+
+.summary-item label{
+  display:block;
+
+  color:var(--gold);
+
+  margin-bottom:12px;
+
+  text-transform:uppercase;
+
+  letter-spacing:2px;
+
+  font-size:11px;
+}
+
+.summary-item p{
+  font-size:18px;
+
+  color:var(--text);
+
+  line-height:1.7;
+}
+
+.summary-btn{
+  width:100%;
+
+  margin-top:40px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:1100px){
+
+  .configurator-container{
+    grid-template-columns:1fr;
+  }
+
+  .configurator-sidebar{
+    position:relative;
+    top:auto;
+  }
+
+}
+
+@media(max-width:900px){
+
+  .tier-two-grid{
+    grid-template-columns:1fr;
+  }
+
+}
+
+@media(max-width:768px){
+
+  nav{
+    display:none;
+  }
+
+  .configurator-hero{
+    height:70vh;
+  }
+
+  .configurator-hero-content h1{
+    font-size:56px;
+  }
+
+  .config-title h3{
+    font-size:42px;
+  }
+
+  .section-heading h2{
+    font-size:42px;
+  }
+
+  .service-tier-header h4{
+    font-size:38px;
+  }
+
+  .service-tier-header span{
+    font-size:13px;
+  }
+
+  .luxury-inputs{
+    grid-template-columns:1fr;
+  }
+
+  .material-grid{
+    grid-template-columns:1fr;
+  }
+
+  .summary-card h2{
+    font-size:42px;
+  }
+
+  .summary-price::before{
+    font-size:72px;
+  }
+
+.summary-price #livePrice{
+  display:block;
+
+  font-size:120px;
+
+  line-height:0.82;
+
+  letter-spacing:-6px;
+
+  font-weight:700;
+
+  color:#f3e7d1;
+
+  text-shadow:
+    0 0 40px rgba(200,164,106,.18),
+    0 0 80px rgba(200,164,106,.08);
+
+  font-family:'Cormorant Garamond',serif;
+
+  transition:.35s ease;
+}
+
+/* =========================
+   TEXT MODE
+========================= */
+
+.summary-price #livePrice.text-mode{
+
+  font-size:54px;
+
+  line-height:1.1;
+
+  letter-spacing:-1px;
+
+}
+/* =========================
+   SMALL STATUS TEXT
+========================= */
+
+.small-price-text{
+
+  font-size:50px !important;
+
+  line-height:1.3 !important;
+
+  letter-spacing:0px !important;
+
+  display:block;
+
+  max-width:220px;
+
+  color:#f3e7d1;
+
+}
+}
